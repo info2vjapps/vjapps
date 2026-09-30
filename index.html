@@ -1,774 +1,1184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VJAPPS - Mobile App Development</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
 
-  <style>
-    :root {
-      --primary: #f27405;
-      --primary-dark: #d86200;
-      --text-dark: #1b1e28;
-      --text-muted: #6a7181;
-      --bg-light: #ffffff;
-      --card-bg: #ffffff;
-      --card-border: #f0f2f5;
-      --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
-      --radius: 18px;
-    }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
+    <meta name="description"
+          content="VJApps builds modern websites, web applications and mobile apps for businesses and startups.">
 
-    html {
-      scroll-behavior: smooth;
-    }
+    <title>VJApps — Web, WebApp & Mobile App Development</title>
 
-    body {
-      color: var(--text-dark);
-      background-color: #fbfbfd;
-      line-height: 1.6;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
 
-    /* Navbar */
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .brand-img {
-      width: 44px;
-      height: 44px;
-      object-fit: contain;
-      flex-shrink: 0;
-    }
-
-    .brand-text h1 {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      color: var(--primary);
-      line-height: 1.1;
-    }
-
-    .brand-text span {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--text-muted);
-      font-weight: 700;
-      display: block;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 32px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #4b5563;
-      font-weight: 600;
-      font-size: 15px;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--primary);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 28px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 15px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background-color: var(--primary);
-      color: #fff;
-      border: 2px solid var(--primary);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--primary-dark);
-      border-color: var(--primary-dark);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #e5e7eb;
-      color: #4b5563;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 60px 0 100px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -100px;
-      right: -150px;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(242,116,5,0.12) 0%, rgba(255,255,255,0) 70%);
-      z-index: -1;
-      border-radius: 50%;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .hero-text h2 {
-      font-size: 56px;
-      line-height: 1.15;
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    .hero-text h2 span {
-      color: var(--primary);
-    }
-
-    .hero-text p {
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 480px;
-      margin-bottom: 36px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-    }
-
-    /* Phone Mockup */
-    .hero-visual {
-      position: relative;
-      display: flex;
-      justify-content: center;
-    }
-
-    .phone-wrapper {
-      position: relative;
-      width: 300px;
-      height: 580px;
-      background: #ffffff;
-      border-radius: 46px;
-      border: 12px solid #1f242d;
-      box-shadow: var(--shadow-md);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .phone-notch {
-      position: absolute;
-      top: 0;
-      width: 130px;
-      height: 20px;
-      background: #1f242d;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-    }
-
-    .phone-screen-content {
-      text-align: center;
-    }
-
-    .phone-screen-content .brand-img {
-      width: 90px;
-      height: 90px;
-      margin-bottom: 12px;
-    }
-
-    .floating-badge {
-      position: absolute;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 20px;
-      box-shadow: 0 10px 20px rgba(242,116,5,0.3);
-    }
-
-    .badge-top-left { top: 15%; left: 8%; }
-    .badge-top-right { top: 18%; right: 5%; }
-    .badge-bottom-left { bottom: 18%; left: 10%; }
-    .badge-bottom-right { bottom: 20%; right: 8%; }
-
-    /* Services Section */
-    .section {
-      padding: 90px 0;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-tagline {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--primary);
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 34px;
-      font-weight: 800;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .service-card {
-      background: #fff;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      padding: 36px 24px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .service-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-5px);
-    }
-
-    .service-icon {
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      background: #fdf5ec;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      margin: 0 auto 20px;
-    }
-
-    .service-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    /* Apps Section */
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-
-    .app-card {
-      background: #fff;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .app-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 18px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 34px;
-      color: #fff;
-    }
-
-    .app-icon.edutots { background: linear-gradient(135deg, #38ef7d, #11998e); }
-    .app-icon.slate { background: linear-gradient(135deg, #434343, #000000); }
-    .app-icon.quotes { background: linear-gradient(135deg, #ff416c, #ff4b2b); }
-    .app-icon.manager { background: linear-gradient(135deg, #2193b0, #6dd5ed); }
-
-    .app-card h4 {
-      font-size: 17px;
-      font-weight: 700;
-    }
-
-    .app-category {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 8px;
-    }
-
-    .rating {
-      color: #ffb800;
-      font-size: 12px;
-      margin-bottom: 16px;
-    }
-
-    .play-badge {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #000;
-      color: #fff;
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 12px;
-      text-decoration: none;
-    }
-
-    .play-badge i { font-size: 16px; }
-
-    /* CTA Section */
-    .cta-banner {
-      background: linear-gradient(90deg, #f27405 0%, #ff9738 100%);
-      border-radius: 28px;
-      padding: 60px 80px;
-      color: #fff;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 40px;
-      box-shadow: 0 16px 40px rgba(242,116,5,0.25);
-    }
-
-    .cta-text h2 {
-      font-size: 40px;
-      line-height: 1.2;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .cta-text p {
-      font-size: 17px;
-      opacity: 0.9;
-      margin-bottom: 28px;
-    }
-
-    .cta-banner .btn-white {
-      background: #fff;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .cta-banner .btn-white:hover {
-      background: #fdf5ec;
-    }
-
-    .cta-phone-icon {
-      width: 70px;
-      height: 70px;
-      object-fit: contain;
-      filter: brightness(0) invert(1);
-    }
-
-    /* Footer */
-    footer {
-      background: #ffffff;
-      padding: 80px 0 30px;
-      border-top: 1px solid var(--card-border);
-      margin-top: 60px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-      gap: 40px;
-      margin-bottom: 60px;
-    }
-
-    .footer-brand p {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-top: 16px;
-      line-height: 1.6;
-    }
-
-    .footer-col h5 {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .footer-col ul {
-      list-style: none;
-    }
-
-    .footer-col ul li {
-      margin-bottom: 10px;
-    }
-
-    .footer-col ul a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-
-    .footer-col ul a:hover {
-      color: var(--primary);
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .contact-item i {
-      color: var(--primary);
-      width: 16px;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .social-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #fdf5ec;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .social-btn:hover {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #f0f2f5;
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      color: #9ca3af;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .services-grid, .apps-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 768px) {
-      .hero-grid, .cta-banner { grid-template-columns: 1fr; }
-      .hero-text h2 { font-size: 38px; }
-      .hero-visual { display: none; }
-      .services-grid, .apps-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .footer-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Navigation -->
-  <header>
-    <div class="container">
-      <nav>
-        <a href="#home" class="brand">
-          <img src="./vjapps_logo.png" alt="VJAPPS Logo" class="brand-img" />
-          <div class="brand-text">
-            <h1>VJAPPS</h1>
-            <span>Mobile App Developer</span>
-          </div>
-        </a>
-        <ul class="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="https://play.google.com/store/apps/dev?id=7644735129592386677">Our Apps</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-      </nav>
-    </div>
-  </header>
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <h2>We Build<br>Amazing<br><span>Mobile Apps</span></h2>
-          <p>VJAPPS is a mobile app development company focused on building high-quality, user-friendly and innovative apps for Android.</p>
-          <div class="hero-actions">
-            <a href="https://play.google.com/store/apps/dev?id=7644735129592386677" class="btn btn-primary"><i class="fa-brands fa-google-play"></i> Our Apps on Play Store</a>
-            <a href="#contact" class="btn btn-outline">Contact Us</a>
-          </div>
+<header class="header">
+
+    <div class="container nav-container">
+
+  <a href="#home" class="logo">
+    <img src="assets/vjapps-logo.png" alt="VJApps">
+</a>
+
+        <input type="checkbox"
+               id="menu-toggle"
+               class="menu-toggle">
+
+        <label for="menu-toggle"
+               class="menu-button"
+               aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="nav">
+
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#process">Process</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+
+            <a href="#contact" class="nav-cta">
+                Start a Project
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-shape hero-shape-one"></div>
+    <div class="hero-shape hero-shape-two"></div>
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                SOFTWARE DEVELOPMENT STUDIO
+            </div>
+
+            <h1>
+                We build digital
+                <span>products</span>
+                people love.
+            </h1>
+
+            <p class="hero-description">
+                VJApps creates modern websites, powerful web applications
+                and mobile apps that help businesses turn ideas into
+                useful digital products.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#portfolio" class="button button-dark">
+                    View Our Work
+                    <span>→</span>
+                </a>
+
+                <a href="#contact" class="button button-outline">
+                    Start a Project
+                </a>
+
+            </div>
+
+            <div class="hero-services">
+
+                <div>
+                    <strong>Web</strong>
+                    <span>Modern websites</span>
+                </div>
+
+                <div>
+                    <strong>Web Apps</strong>
+                    <span>Business solutions</span>
+                </div>
+
+                <div>
+                    <strong>Mobile</strong>
+                    <span>Android & iOS apps</span>
+                </div>
+
+            </div>
+
         </div>
+
 
         <div class="hero-visual">
-          <div class="floating-badge badge-top-left"><i class="fa-solid fa-mobile-screen"></i></div>
-          <div class="floating-badge badge-top-right"><i class="fa-solid fa-code"></i></div>
-          <div class="floating-badge badge-bottom-left"><i class="fa-brands fa-android"></i></div>
-          <div class="floating-badge badge-bottom-right"><i class="fa-solid fa-rocket"></i></div>
 
-          <div class="phone-wrapper">
-            <div class="phone-notch"></div>
-            <div class="phone-screen-content">
-              <img src="./vjapps_logo.png" alt="VJAPPS Logo" class="brand-img" />
-              <h3 style="color: var(--primary); letter-spacing: 1px;">VJAPPS</h3>
+            <div class="browser-card">
+
+                <div class="browser-top">
+
+                    <div class="browser-dots">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                    <span>vjapps.com</span>
+
+                </div>
+
+                <div class="browser-content">
+
+                    <div class="browser-sidebar">
+
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="browser-main">
+
+                        <div class="browser-line large"></div>
+                        <div class="browser-line"></div>
+
+                        <div class="browser-chart">
+
+                            <span style="height:35%"></span>
+                            <span style="height:55%"></span>
+                            <span style="height:42%"></span>
+                            <span style="height:75%"></span>
+                            <span style="height:62%"></span>
+                            <span style="height:90%"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Services Section -->
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tagline">What We Do</span>
-        <h2 class="section-title">Our Services</h2>
-      </div>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-          <h3>Android App Development</h3>
-          <p>We build fast, secure, and scalable Android applications tailored to your needs.</p>
-        </div>
+            <div class="phone-card">
 
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
-          <h3>UI/UX Design</h3>
-          <p>Beautiful, modern and user-friendly designs that deliver great experiences.</p>
-        </div>
+                <div class="phone-speaker"></div>
 
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-          <h3>App Publishing</h3>
-          <p>We help you publish your app on Google Play Store and grow your audience.</p>
-        </div>
+                <div class="phone-screen">
 
-        <div class="service-card">
-          <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
-          <h3>Support & Maintenance</h3>
-          <p>We provide ongoing support and maintenance to keep your app up-to-date.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+                    <div class="phone-logo">VJ</div>
 
-  <!-- Apps Section -->
-  <section class="section" id="apps" style="background-color: #fff;">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tagline">Our Apps</span>
-        <h2 class="section-title">Apps on Google Play Store</h2>
-      </div>
+                    <div class="phone-title">
+                        Your app.
+                    </div>
 
-      <div class="apps-grid">
-        <div class="app-card">
-          <div class="app-icon edutots"><i class="fa-solid fa-shapes"></i></div>
-          <h4>EduTots</h4>
-          <span class="app-category">EduTots: ABC, Math & Puzzles</span>
-          <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <a href="https://play.google.com/store/apps/details?id=com.vjapps.edutots" class="play-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
-        </div>
+                    <div class="phone-line"></div>
+                    <div class="phone-line short"></div>
 
-        <div class="app-card">
-          <div class="app-icon slate"><i class="fa-solid fa-chalkboard"></i></div>
-          <h4>Greenboard</h4>
-          <span class="app-category">Draw & Learn</span>
-          <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <a href="https://play.google.com/store/apps/dev?id=7644735129592386677" class="play-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
-        </div>
+                    <div class="phone-buttons">
+                        <span></span>
+                        <span></span>
+                    </div>
 
-        <div class="app-card">
-          <div class="app-icon quotes"><i class="fa-solid fa-quote-right"></i></div>
-          <h4>Daily Quotes</h4>
-          <span class="app-category">Inspiration Daily</span>
-          <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <a href="#" class="play-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
-        </div>
+                </div>
 
-        <div class="app-card">
-          <div class="app-icon manager"><i class="fa-solid fa-trowel-bricks"></i></div>
-          <h4>Site Manager</h4>
-          <span class="app-category">Construction App</span>
-          <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-          <a href="#" class="play-badge"><i class="fa-brands fa-google-play"></i> Google Play</a>
-        </div>
-      </div>
+                <div class="phone-home"></div>
 
-      <div style="text-align: center;">
-        <a href="https://play.google.com/store/apps/dev?id=7644735129592386677" class="btn btn-outline" style="border-radius: 12px; font-weight: 600;">View More Apps on Play Store</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="section" id="contact">
-    <div class="container">
-      <div class="cta-banner">
-        <div class="cta-text">
-          <span style="text-transform: uppercase; font-size: 13px; font-weight: 700; opacity: 0.9;">Have an Idea?</span>
-          <h2>Let’s Build Something Great!</h2>
-          <p>We turn your ideas into powerful mobile apps. Contact us today and bring your vision to life.</p>
-          <a href="mailto:contact2jayu@gmail.com" class="btn btn-white">Get In Touch</a>
-        </div>
-        <div style="display: flex; justify-content: center;">
-          <div class="phone-wrapper" style="width: 220px; height: 380px; border-width: 8px;">
-            <div class="phone-notch" style="width: 90px; height: 14px;"></div>
-            <img src="./vjapps_logo.png" alt="VJAPPS Logo" class="cta-phone-icon" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="https://play.google.com/store/apps/dev?id=7644735129592386677" class="brand">
-            <img src="./vjapps_logo.png" alt="VJAPPS Logo" class="brand-img" />
-            <div class="brand-text">
-              <h1>VJAPPS</h1>
-              <span>Mobile App Developer</span>
             </div>
-          </a>
-          <p>VJAPPS is a passionate mobile app development company creating innovative apps for Android users.</p>
+
+
+            <div class="floating-card floating-top">
+                <strong>Clean Development</strong>
+                <span>Modern & scalable</span>
+            </div>
+
+            <div class="floating-card floating-bottom">
+                <strong>Ready to Launch</strong>
+                <span>Built for real users</span>
+            </div>
+
         </div>
 
-        <div class="footer-col">
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="https://play.google.com/store/apps/dev?id=7644735129592386677">Services</a></li>
-            <li><a href="https://play.google.com/store/apps/dev?id=7644735129592386677">Our Apps</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Our Services</h5>
-          <ul>
-            <li><a href="https://play.google.com/store/apps/dev?id=7644735129592386677">Android App Development</a></li>
-            <li><a href="#services">UI/UX Design</a></li>
-            <li><a href="#services">App Publishing</a></li>
-            <li><a href="#services">Support & Maintenance</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Contact Us</h5>
-         
-          <div class="contact-item">
-            <i class="fa-solid fa-envelope"></i>
-            <span>contact2jayu@gmail.com</span>
-          </div>
-          <div class="contact-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <span>India</span>
-          </div>
-          <!-- <div class="social-links">
-            <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="social-btn"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-          </div> -->
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 VJAPPS. All Rights Reserved.</p>
-        <p>Made with &hearts; by VJAPPS</p>
-      </div>
     </div>
-  </footer>
+
+</section>
+
+
+<!-- =========================================================
+     TECHNOLOGY STRIP
+========================================================= -->
+
+<section class="tech-strip">
+
+    <div class="container tech-strip-inner">
+
+        <span>Flutter</span>
+        <span>HTML & CSS</span>
+        <span>JavaScript</span>
+        <span>PHP</span>
+        <span>Firebase</span>
+        <span>MySQL</span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="section services-section" id="services">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <div class="eyebrow">
+                WHAT WE DO
+            </div>
+
+            <h2>
+                Digital solutions built
+                <span>to perform.</span>
+            </h2>
+
+            <p>
+                From a simple website to a complete mobile application,
+                we build practical digital products designed around
+                your goals.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <!-- SERVICE 1 -->
+
+            <article class="service-card">
+
+                <div class="service-number">01</div>
+
+                <div class="service-icon">
+                    ◇
+                </div>
+
+                <h3>Website Development</h3>
+
+                <p>
+                    Professional responsive websites designed to
+                    represent your brand and convert visitors.
+                </p>
+
+                <ul>
+                    <li>Business Websites</li>
+                    <li>Landing Pages</li>
+                    <li>Portfolio Websites</li>
+                    <li>Responsive Design</li>
+                </ul>
+
+                <a href="#contact" class="text-link">
+                    Start a website project →
+                </a>
+
+            </article>
+
+
+            <!-- SERVICE 2 -->
+
+            <article class="service-card">
+
+                <div class="service-number">02</div>
+
+                <div class="service-icon">
+                    ◈
+                </div>
+
+                <h3>Web Applications</h3>
+
+                <p>
+                    Custom web applications that simplify workflows,
+                    manage data and support your business.
+                </p>
+
+                <ul>
+                    <li>Custom Web Apps</li>
+                    <li>Admin Panels</li>
+                    <li>Business Systems</li>
+                    <li>Database Integration</li>
+                </ul>
+
+                <a href="#contact" class="text-link">
+                    Build a web app →
+                </a>
+
+            </article>
+
+
+            <!-- SERVICE 3 -->
+
+            <article class="service-card featured">
+
+                <div class="service-number">03</div>
+
+                <div class="service-icon">
+                    ●
+                </div>
+
+                <h3>Mobile App Development</h3>
+
+                <p>
+                    Cross-platform mobile applications built for
+                    Android and iOS with clean user experiences.
+                </p>
+
+                <ul>
+                    <li>Android Applications</li>
+                    <li>iOS Applications</li>
+                    <li>Flutter Development</li>
+                    <li>Play Store Deployment</li>
+                </ul>
+
+                <a href="#contact" class="text-link">
+                    Build a mobile app →
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY US
+========================================================= -->
+
+<section class="section why-section">
+
+    <div class="container why-grid">
+
+        <div class="why-content">
+
+            <div class="eyebrow">
+                WHY VJAPPS
+            </div>
+
+            <h2>
+                Ideas deserve great
+                <span>execution.</span>
+            </h2>
+
+            <p>
+                We focus on building digital products that are useful,
+                visually clean and technically reliable. Every project
+                is developed with attention to performance, usability
+                and long-term maintainability.
+            </p>
+
+            <div class="why-list">
+
+                <div>
+                    <span>01</span>
+                    <div>
+                        <strong>Modern & Fast</strong>
+                        <p>Clean code and optimized performance.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <div>
+                        <strong>Responsive</strong>
+                        <p>Designed for phones, tablets and desktops.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <div>
+                        <strong>Direct Communication</strong>
+                        <p>Simple communication throughout the project.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="why-visual">
+
+            <div class="stats-card">
+
+                <div class="stat-item">
+                    <strong>Web</strong>
+                    <span>Development</span>
+                </div>
+
+                <div class="stat-item">
+                    <strong>WebApp</strong>
+                    <span>Solutions</span>
+                </div>
+
+                <div class="stat-item">
+                    <strong>Mobile</strong>
+                    <span>Applications</span>
+                </div>
+
+                <div class="stat-item">
+                    <strong>UI/UX</strong>
+                    <span>Design</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section class="section process-section" id="process">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <div class="eyebrow">
+                OUR PROCESS
+            </div>
+
+            <h2>
+                From idea to
+                <span>launch.</span>
+            </h2>
+
+            <p>
+                A simple and transparent process that keeps your project
+                moving forward.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-item">
+
+                <div class="process-top">
+                    <span>01</span>
+                </div>
+
+                <div class="process-line"></div>
+
+                <h3>Discover</h3>
+
+                <p>
+                    We understand your idea, business and project goals.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <div class="process-top">
+                    <span>02</span>
+                </div>
+
+                <div class="process-line"></div>
+
+                <h3>Design</h3>
+
+                <p>
+                    We create a clean interface and user experience.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <div class="process-top">
+                    <span>03</span>
+                </div>
+
+                <div class="process-line"></div>
+
+                <h3>Develop</h3>
+
+                <p>
+                    We turn the approved design into a working product.
+                </p>
+
+            </div>
+
+
+            <div class="process-item">
+
+                <div class="process-top">
+                    <span>04</span>
+                </div>
+
+                <div class="process-line"></div>
+
+                <h3>Launch</h3>
+
+                <p>
+                    We test, prepare and help you launch your product.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PORTFOLIO
+========================================================= -->
+
+<section class="section portfolio-section" id="portfolio">
+
+    <div class="container">
+
+        <div class="portfolio-heading">
+
+            <div>
+                <div class="eyebrow">
+                    OUR WORK
+                </div>
+
+                <h2>
+                    Products we've
+                    <span>built.</span>
+                </h2>
+            </div>
+
+            <p>
+                Explore some of our mobile applications and digital
+                products available on Google Play.
+            </p>
+
+        </div>
+
+
+        <div class="portfolio-grid">
+
+            <!-- GREENBOARD -->
+
+            <article class="portfolio-card">
+
+                <div class="portfolio-image greenboard">
+
+                    <div class="app-icon">
+                        🎨
+                    </div>
+
+                    <div class="app-preview-text">
+                        Greenboard
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <div>
+                        <small>EDUCATION / KIDS</small>
+
+                        <h3>Greenboard</h3>
+
+                        <p>
+                            Creative drawing experience for kids.
+                        </p>
+                    </div>
+
+                    <a href="#" class="play-button">
+                        Google Play ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- AIR HORN -->
+
+            <article class="portfolio-card">
+
+                <div class="portfolio-image airhorn">
+
+                    <div class="app-icon">
+                        📣
+                    </div>
+
+                    <div class="app-preview-text">
+                        Air Horn
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <div>
+                        <small>UTILITY / MOBILE</small>
+
+                        <h3>Air Horn</h3>
+
+                        <p>
+                            Simple sound utility application.
+                        </p>
+                    </div>
+
+                    <a href="#" class="play-button">
+                        Google Play ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- EDUTOTS -->
+
+            <article class="portfolio-card">
+
+                <div class="portfolio-image edutots">
+
+                    <div class="app-icon">
+                        📚
+                    </div>
+
+                    <div class="app-preview-text">
+                        EduTots
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <div>
+                        <small>EDUCATION / MOBILE</small>
+
+                        <h3>EduTots</h3>
+
+                        <p>
+                            Learning experience designed for kids.
+                        </p>
+                    </div>
+
+                    <a href="#" class="play-button">
+                        Google Play ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- CHANAKYA -->
+
+            <article class="portfolio-card">
+
+                <div class="portfolio-image chanakya">
+
+                    <div class="app-icon">
+                        📖
+                    </div>
+
+                    <div class="app-preview-text">
+                        Chanakya Quotes
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <div>
+                        <small>QUOTES / PRODUCTIVITY</small>
+
+                        <h3>Chanakya Quotes</h3>
+
+                        <p>
+                            Wisdom and life lessons in a simple app.
+                        </p>
+                    </div>
+
+                    <a href="#" class="play-button">
+                        Google Play ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TECHNOLOGY
+========================================================= -->
+
+<section class="technology-section">
+
+    <div class="container">
+
+        <div class="technology-heading">
+
+            <div>
+                <div class="eyebrow light">
+                    TECHNOLOGY
+                </div>
+
+                <h2>
+                    Built with modern
+                    <span>technology.</span>
+                </h2>
+            </div>
+
+            <p>
+                We choose reliable technologies that help create
+                scalable, maintainable and practical products.
+            </p>
+
+        </div>
+
+
+        <div class="technology-grid">
+
+            <div class="technology-item">
+                <strong>Flutter</strong>
+                <span>Mobile Apps</span>
+            </div>
+
+            <div class="technology-item">
+                <strong>HTML</strong>
+                <span>Web</span>
+            </div>
+
+            <div class="technology-item">
+                <strong>CSS</strong>
+                <span>UI</span>
+            </div>
+
+            <div class="technology-item">
+                <strong>JavaScript</strong>
+                <span>Web Apps</span>
+            </div>
+
+            <div class="technology-item">
+                <strong>PHP</strong>
+                <span>Backend</span>
+            </div>
+
+            <div class="technology-item">
+                <strong>Firebase</strong>
+                <span>Cloud</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="section about-section" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-visual">
+
+            <div class="about-box">
+
+                <div class="about-box-small">
+                    VJApps
+                </div>
+
+                <div class="about-box-title">
+                    Digital
+                    <br>
+                    Products.
+                </div>
+
+                <div class="about-box-line"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <div class="eyebrow">
+                ABOUT VJAPPS
+            </div>
+
+            <h2>
+                Turning ideas into
+                <span>digital products.</span>
+            </h2>
+
+            <p>
+                VJApps is a software development studio focused on
+                creating useful websites, web applications and mobile
+                applications for businesses, startups and individual
+                product ideas.
+            </p>
+
+            <p>
+                We believe good software should be simple to use,
+                visually clean and built with technology that can grow
+                with your business.
+            </p>
+
+            <ul class="about-points">
+
+                <li>
+                    <span>✓</span>
+                    Clean & modern design
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    Responsive development
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    Practical business solutions
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    Long-term technical support
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="cta-content">
+
+                <div class="eyebrow">
+                    HAVE AN IDEA?
+                </div>
+
+                <h2>
+                    Let's build something
+                    <span>great.</span>
+                </h2>
+
+                <p>
+                    Tell us about your idea and let's discuss how
+                    we can turn it into a real digital product.
+                </p>
+
+            </div>
+
+            <a href="#contact" class="button button-white">
+                Start a Project
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="section contact-section" id="contact">
+
+    <div class="container contact-grid">
+
+        <div class="contact-content">
+
+            <div class="eyebrow">
+                CONTACT
+            </div>
+
+            <h2>
+                Let's create
+                <span>something great.</span>
+            </h2>
+
+            <p>
+                Have a website, web application or mobile app idea?
+                Send us a message and tell us what you want to build.
+            </p>
+
+            <a href="mailto:contact2jayu@gmail.com"
+               class="email-link">
+                contact2jayu@gmail.com
+            </a>
+
+        </div>
+
+
+        <form class="contact-form"
+              action="mailto:contact2jayu@gmail.com"
+              method="post"
+              enctype="text/plain">
+
+            <h3>
+                Tell us about your project
+            </h3>
+
+            <p>
+                Fill in the details below and we'll get back to you.
+            </p>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input type="text"
+                           id="name"
+                           name="Name"
+                           placeholder="John Doe"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input type="email"
+                           id="email"
+                           name="Email"
+                           placeholder="john@example.com"
+                           required>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="project">
+                    Project Type
+                </label>
+
+                <select id="project"
+                        name="Project">
+
+                    <option value="">
+                        Select a service
+                    </option>
+
+                    <option>
+                        Website Development
+                    </option>
+
+                    <option>
+                        Web Application
+                    </option>
+
+                    <option>
+                        Mobile App
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea id="message"
+                          name="Message"
+                          rows="5"
+                          placeholder="Tell us about your project..."
+                          required></textarea>
+
+            </div>
+
+
+            <button type="submit"
+                    class="button button-dark submit-button">
+
+                Send Message
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo footer-logo">
+
+                    <span class="logo-main">
+                        VJ<span>Apps</span>
+                    </span>
+
+                    <span class="logo-sub">
+                        DIGITAL PRODUCTS
+                    </span>
+
+                </a>
+
+                <p>
+                    Building modern websites, web applications
+                    and mobile apps for real-world ideas.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Company</h4>
+
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Services</h4>
+
+                <a href="#services">Website</a>
+                <a href="#services">Web App</a>
+                <a href="#services">Mobile Apps</a>
+                <a href="#services">UI / UX</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Contact</h4>
+
+                <a href="mailto:contact2jayu@gmail.com">
+                    Email Us
+                </a>
+
+                <a href="#contact">
+                    Start a Project
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 VJApps. All rights reserved.
+            </span>
+
+            <span>
+                Designed & developed by VJApps.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
