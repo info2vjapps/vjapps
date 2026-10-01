@@ -105,10 +105,19 @@ img {
     display: inline-flex;
     align-items: center;
 }
-
+.logo-text {
+  font-size: 1.70rem; /* Increased size (adjust between 1rem to 1.5rem as needed) */
+  font-weight: 700;   /* Slightly bolder to keep it sharp at a larger size */
+  color: #333;        /* Use #fff if on a dark background */
+  margin-top: 6px;    /* Optional: tweaks vertical spacing */
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+  color: #ff9800;
+  font-family: 'Poppins', sans-serif;
+}
 .logo img {
-    width: 125px;
-    height: auto;
+    width: 50px;
+    height: 50px;
     display: block;
 }
 
