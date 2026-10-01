@@ -2,253 +2,1186 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="VJApps - Software, Web and Mobile App Development">
-    <title>VJApps | Software Development Company</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="VJApps builds modern websites, web applications and mobile apps for businesses and startups.">
+
+    <title>VJApps — Web, WebApp & Mobile App Development</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
+<img src="./vjapps-logo.png"
+     alt="VJApps"
+     style="width:200px; height:auto;">
 
 <body>
 
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header class="header">
-    <div class="container nav">
-        <a href="#home" class="logo">
-            <span class="logo-mark">VJ</span>
-            <span class="logo-text">VJ<span>Apps</span></span>
-        </a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    <div class="container nav-container">
 
-        <nav class="nav-links" id="navLinks">
+  <a href="#home" class="logo">
+    <img src="./vjapps-logo.png" alt="VJApps">
+</a>
+
+        <input type="checkbox"
+               id="menu-toggle"
+               class="menu-toggle">
+
+        <label for="menu-toggle"
+               class="menu-button"
+               aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="nav">
+
             <a href="#home">Home</a>
             <a href="#services">Services</a>
-            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
             <a href="#process">Process</a>
-            <a href="#contact" class="nav-btn">Let's Talk</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+
+            <a href="#contact" class="nav-cta">
+                Start a Project
+            </a>
+
         </nav>
+
     </div>
+
 </header>
+
 
 <main>
 
+<!-- =========================================================
+     HERO
+========================================================= -->
+
 <section class="hero" id="home">
-    <div class="hero-bg"></div>
+
+    <div class="hero-shape hero-shape-one"></div>
+    <div class="hero-shape hero-shape-two"></div>
 
     <div class="container hero-grid">
+
         <div class="hero-content">
-            <div class="badge">● Software Development Studio</div>
+
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                SOFTWARE DEVELOPMENT STUDIO
+            </div>
 
             <h1>
-                We Build Digital
-                <span>Products That Matter.</span>
+                We build digital
+                <span>products</span>
+                people love.
             </h1>
 
-            <p>
-                VJApps creates modern websites, web applications and mobile
-                apps that help businesses grow, connect and succeed.
+            <p class="hero-description">
+                VJApps creates modern websites, powerful web applications
+                and mobile apps that help businesses turn ideas into
+                useful digital products.
             </p>
 
             <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Start a Project <b>→</b></a>
-                <a href="#services" class="btn btn-outline">Explore Services</a>
+
+                <a href="#portfolio" class="button button-dark">
+                    View Our Work
+                    <span>→</span>
+                </a>
+
+                <a href="#contact" class="button button-outline">
+                    Start a Project
+                </a>
+
             </div>
 
-            <div class="hero-trust">
+            <div class="hero-services">
+
                 <div>
                     <strong>Web</strong>
-                    <small>Development</small>
+                    <span>Modern websites</span>
                 </div>
+
+                <div>
+                    <strong>Web Apps</strong>
+                    <span>Business solutions</span>
+                </div>
+
                 <div>
                     <strong>Mobile</strong>
-                    <small>Applications</small>
+                    <span>Android & iOS apps</span>
                 </div>
-                <div>
-                    <strong>UI/UX</strong>
-                    <small>Design</small>
-                </div>
+
             </div>
+
         </div>
 
-        <div class="hero-card-wrap">
-            <div class="code-card">
-                <div class="window-bar">
-                    <span></span><span></span><span></span>
-                    <label>vjapps.dart</label>
+
+        <div class="hero-visual">
+
+            <div class="browser-card">
+
+                <div class="browser-top">
+
+                    <div class="browser-dots">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+
+                    <span>vjapps.com</span>
+
                 </div>
 
-                <div class="code">
-                    <p><i>01</i> <em>class</em> <strong>VJApps</strong> {</p>
-                    <p><i>02</i>&nbsp;&nbsp;<em>final</em> idea = <mark>'your vision'</mark>;</p>
-                    <p><i>03</i>&nbsp;&nbsp;<em>final</em> solution =</p>
-                    <p><i>04</i>&nbsp;&nbsp;&nbsp;&nbsp;buildDigitalProduct(idea);</p>
-                    <p><i>05</i>&nbsp;&nbsp;<em>return</em> solution;</p>
-                    <p><i>06</i> }</p>
+                <div class="browser-content">
+
+                    <div class="browser-sidebar">
+
+                        <span class="active"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="browser-main">
+
+                        <div class="browser-line large"></div>
+                        <div class="browser-line"></div>
+
+                        <div class="browser-chart">
+
+                            <span style="height:35%"></span>
+                            <span style="height:55%"></span>
+                            <span style="height:42%"></span>
+                            <span style="height:75%"></span>
+                            <span style="height:62%"></span>
+                            <span style="height:90%"></span>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="floating-card card-one">
-                    <span>✦</span>
-                    <div><b>Creative</b><small>UI / UX Design</small></div>
-                </div>
-
-                <div class="floating-card card-two">
-                    <span>✓</span>
-                    <div><b>Quality</b><small>Clean Development</small></div>
-                </div>
             </div>
+
+
+            <div class="phone-card">
+
+                <div class="phone-speaker"></div>
+
+                <div class="phone-screen">
+
+                    <div class="phone-logo">VJ</div>
+
+                    <div class="phone-title">
+                        Your app.
+                    </div>
+
+                    <div class="phone-line"></div>
+                    <div class="phone-line short"></div>
+
+                    <div class="phone-buttons">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                </div>
+
+                <div class="phone-home"></div>
+
+            </div>
+
+
+            <div class="floating-card floating-top">
+                <strong>Clean Development</strong>
+                <span>Modern & scalable</span>
+            </div>
+
+            <div class="floating-card floating-bottom">
+                <strong>Ready to Launch</strong>
+                <span>Built for real users</span>
+            </div>
+
         </div>
+
     </div>
+
 </section>
 
-<section class="services section" id="services">
+
+<!-- =========================================================
+     TECHNOLOGY STRIP
+========================================================= -->
+
+<section class="tech-strip">
+
+    <div class="container tech-strip-inner">
+
+        <span>Flutter</span>
+        <span>HTML & CSS</span>
+        <span>JavaScript</span>
+        <span>PHP</span>
+        <span>Firebase</span>
+        <span>MySQL</span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="section services-section" id="services">
+
     <div class="container">
-        <div class="section-heading">
-            <span class="eyebrow">WHAT WE DO</span>
-            <h2>Solutions Built Around <span>Your Business</span></h2>
-            <p>From an idea to a production-ready product, we turn your requirements into practical digital solutions.</p>
+
+        <div class="section-heading centered">
+
+            <div class="eyebrow">
+                WHAT WE DO
+            </div>
+
+            <h2>
+                Digital solutions built
+                <span>to perform.</span>
+            </h2>
+
+            <p>
+                From a simple website to a complete mobile application,
+                we build practical digital products designed around
+                your goals.
+            </p>
+
         </div>
 
-        <div class="service-grid">
+
+        <div class="services-grid">
+
+            <!-- SERVICE 1 -->
+
             <article class="service-card">
-                <div class="service-icon">⌘</div>
-                <h3>Web Development</h3>
-                <p>Fast, responsive and professional websites built for businesses, brands and startups.</p>
-                <a href="#contact">Learn more →</a>
+
+                <div class="service-number">01</div>
+
+                <div class="service-icon">
+                    ◇
+                </div>
+
+                <h3>Website Development</h3>
+
+                <p>
+                    Professional responsive websites designed to
+                    represent your brand and convert visitors.
+                </p>
+
+                <ul>
+                    <li>Business Websites</li>
+                    <li>Landing Pages</li>
+                    <li>Portfolio Websites</li>
+                    <li>Responsive Design</li>
+                </ul>
+
+                <a href="#contact" class="text-link">
+                    Start a website project →
+                </a>
+
             </article>
+
+
+            <!-- SERVICE 2 -->
+
+            <article class="service-card">
+
+                <div class="service-number">02</div>
+
+                <div class="service-icon">
+                    ◈
+                </div>
+
+                <h3>Web Applications</h3>
+
+                <p>
+                    Custom web applications that simplify workflows,
+                    manage data and support your business.
+                </p>
+
+                <ul>
+                    <li>Custom Web Apps</li>
+                    <li>Admin Panels</li>
+                    <li>Business Systems</li>
+                    <li>Database Integration</li>
+                </ul>
+
+                <a href="#contact" class="text-link">
+                    Build a web app →
+                </a>
+
+            </article>
+
+
+            <!-- SERVICE 3 -->
 
             <article class="service-card featured">
-                <div class="service-icon">▣</div>
-                <h3>Mobile Apps</h3>
-                <p>Modern Android and cross-platform mobile applications with clean and scalable code.</p>
-                <a href="#contact">Learn more →</a>
+
+                <div class="service-number">03</div>
+
+                <div class="service-icon">
+                    ●
+                </div>
+
+                <h3>Mobile App Development</h3>
+
+                <p>
+                    Cross-platform mobile applications built for
+                    Android and iOS with clean user experiences.
+                </p>
+
+                <ul>
+                    <li>Android Applications</li>
+                    <li>iOS Applications</li>
+                    <li>Flutter Development</li>
+                    <li>Play Store Deployment</li>
+                </ul>
+
+                <a href="#contact" class="text-link">
+                    Build a mobile app →
+                </a>
+
             </article>
 
-            <article class="service-card">
-                <div class="service-icon">◈</div>
-                <h3>Web Applications</h3>
-                <p>Custom web applications designed around your workflow, customers and business goals.</p>
-                <a href="#contact">Learn more →</a>
-            </article>
-
-            <article class="service-card">
-                <div class="service-icon">✦</div>
-                <h3>UI / UX Design</h3>
-                <p>Simple, attractive and user-friendly interfaces that make digital products easier to use.</p>
-                <a href="#contact">Learn more →</a>
-            </article>
         </div>
+
     </div>
+
 </section>
 
-<section class="about section" id="about">
-    <div class="container about-grid">
-        <div class="about-visual">
-            <div class="about-box">
-                <span class="big-vj">VJ</span>
-                <div class="orbit orbit-one"></div>
-                <div class="orbit orbit-two"></div>
+
+<!-- =========================================================
+     WHY US
+========================================================= -->
+
+<section class="section why-section">
+
+    <div class="container why-grid">
+
+        <div class="why-content">
+
+            <div class="eyebrow">
+                WHY VJAPPS
             </div>
+
+            <h2>
+                Ideas deserve great
+                <span>execution.</span>
+            </h2>
+
+            <p>
+                We focus on building digital products that are useful,
+                visually clean and technically reliable. Every project
+                is developed with attention to performance, usability
+                and long-term maintainability.
+            </p>
+
+            <div class="why-list">
+
+                <div>
+                    <span>01</span>
+                    <div>
+                        <strong>Modern & Fast</strong>
+                        <p>Clean code and optimized performance.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <div>
+                        <strong>Responsive</strong>
+                        <p>Designed for phones, tablets and desktops.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <div>
+                        <strong>Direct Communication</strong>
+                        <p>Simple communication throughout the project.</p>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="about-content">
-            <span class="eyebrow">ABOUT VJAPPS</span>
-            <h2>Technology With a <span>Purpose.</span></h2>
-            <p>
-                VJApps is a software development studio focused on creating
-                useful, modern and reliable digital products.
-            </p>
-            <p>
-                We combine development, design and practical business thinking
-                to deliver solutions that are easy to use and ready to grow.
-            </p>
 
-            <div class="check-list">
-                <div>✓ Responsive & modern design</div>
-                <div>✓ Clean and maintainable code</div>
-                <div>✓ Mobile-first development</div>
-                <div>✓ Business-focused solutions</div>
+        <div class="why-visual">
+
+            <div class="stats-card">
+
+                <div class="stat-item">
+                    <strong>Web</strong>
+                    <span>Development</span>
+                </div>
+
+                <div class="stat-item">
+                    <strong>WebApp</strong>
+                    <span>Solutions</span>
+                </div>
+
+                <div class="stat-item">
+                    <strong>Mobile</strong>
+                    <span>Applications</span>
+                </div>
+
+                <div class="stat-item">
+                    <strong>UI/UX</strong>
+                    <span>Design</span>
+                </div>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
-<section class="process section" id="process">
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section class="section process-section" id="process">
+
     <div class="container">
-        <div class="section-heading">
-            <span class="eyebrow">HOW WE WORK</span>
-            <h2>Simple Process. <span>Real Results.</span></h2>
+
+        <div class="section-heading centered">
+
+            <div class="eyebrow">
+                OUR PROCESS
+            </div>
+
+            <h2>
+                From idea to
+                <span>launch.</span>
+            </h2>
+
+            <p>
+                A simple and transparent process that keeps your project
+                moving forward.
+            </p>
+
         </div>
+
 
         <div class="process-grid">
+
             <div class="process-item">
-                <span>01</span>
+
+                <div class="process-top">
+                    <span>01</span>
+                </div>
+
+                <div class="process-line"></div>
+
                 <h3>Discover</h3>
-                <p>We understand your idea, requirements and business goals.</p>
+
+                <p>
+                    We understand your idea, business and project goals.
+                </p>
+
             </div>
+
+
             <div class="process-item">
-                <span>02</span>
+
+                <div class="process-top">
+                    <span>02</span>
+                </div>
+
+                <div class="process-line"></div>
+
                 <h3>Design</h3>
-                <p>We create a clear user experience and visual direction.</p>
+
+                <p>
+                    We create a clean interface and user experience.
+                </p>
+
             </div>
+
+
             <div class="process-item">
-                <span>03</span>
+
+                <div class="process-top">
+                    <span>03</span>
+                </div>
+
+                <div class="process-line"></div>
+
                 <h3>Develop</h3>
-                <p>We build, test and refine your product with clean code.</p>
+
+                <p>
+                    We turn the approved design into a working product.
+                </p>
+
             </div>
+
+
             <div class="process-item">
-                <span>04</span>
+
+                <div class="process-top">
+                    <span>04</span>
+                </div>
+
+                <div class="process-line"></div>
+
                 <h3>Launch</h3>
-                <p>We prepare your product for release and future growth.</p>
+
+                <p>
+                    We test, prepare and help you launch your product.
+                </p>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
-<section class="cta" id="contact">
-    <div class="container cta-inner">
-        <div>
-            <span class="eyebrow">HAVE AN IDEA?</span>
-            <h2>Let's Build Something <span>Great.</span></h2>
-            <p>Tell us what you want to build and let's turn your idea into a digital product.</p>
+
+<!-- =========================================================
+     PORTFOLIO
+========================================================= -->
+
+<section class="section portfolio-section" id="portfolio">
+
+    <div class="container">
+
+        <div class="portfolio-heading">
+
+            <div>
+                <div class="eyebrow">
+                    OUR WORK
+                </div>
+
+                <h2>
+                    Products we've
+                    <span>built.</span>
+                </h2>
+            </div>
+
+            <p>
+                Explore some of our mobile applications and digital
+                products available on Google Play.
+            </p>
+
         </div>
-        <a class="btn btn-light" href="mailto:info@vjapps.com">Contact VJApps →</a>
+
+
+        <div class="portfolio-grid">
+
+            <!-- GREENBOARD -->
+
+            <article class="portfolio-card">
+
+                <div class="portfolio-image greenboard">
+
+                    <div class="app-icon">
+                        🎨
+                    </div>
+
+                    <div class="app-preview-text">
+                        Greenboard
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <div>
+                        <small>EDUCATION / KIDS</small>
+
+                        <h3>Greenboard</h3>
+
+                        <p>
+                            Creative drawing experience for kids.
+                        </p>
+                    </div>
+
+                    <a href="#" class="play-button">
+                        Google Play ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- AIR HORN -->
+
+            <article class="portfolio-card">
+
+                <div class="portfolio-image airhorn">
+
+                    <div class="app-icon">
+                        📣
+                    </div>
+
+                    <div class="app-preview-text">
+                        Air Horn
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <div>
+                        <small>UTILITY / MOBILE</small>
+
+                        <h3>Air Horn</h3>
+
+                        <p>
+                            Simple sound utility application.
+                        </p>
+                    </div>
+
+                    <a href="#" class="play-button">
+                        Google Play ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- EDUTOTS -->
+
+            <article class="portfolio-card">
+
+                <div class="portfolio-image edutots">
+
+                    <div class="app-icon">
+                        📚
+                    </div>
+
+                    <div class="app-preview-text">
+                        EduTots
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <div>
+                        <small>EDUCATION / MOBILE</small>
+
+                        <h3>EduTots</h3>
+
+                        <p>
+                            Learning experience designed for kids.
+                        </p>
+                    </div>
+
+                    <a href="#" class="play-button">
+                        Google Play ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- CHANAKYA -->
+
+            <article class="portfolio-card">
+
+                <div class="portfolio-image chanakya">
+
+                    <div class="app-icon">
+                        📖
+                    </div>
+
+                    <div class="app-preview-text">
+                        Chanakya Quotes
+                    </div>
+
+                </div>
+
+                <div class="portfolio-info">
+
+                    <div>
+                        <small>QUOTES / PRODUCTIVITY</small>
+
+                        <h3>Chanakya Quotes</h3>
+
+                        <p>
+                            Wisdom and life lessons in a simple app.
+                        </p>
+                    </div>
+
+                    <a href="#" class="play-button">
+                        Google Play ↗
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
     </div>
+
+</section>
+
+
+<!-- =========================================================
+     TECHNOLOGY
+========================================================= -->
+
+<section class="technology-section">
+
+    <div class="container">
+
+        <div class="technology-heading">
+
+            <div>
+                <div class="eyebrow light">
+                    TECHNOLOGY
+                </div>
+
+                <h2>
+                    Built with modern
+                    <span>technology.</span>
+                </h2>
+            </div>
+
+            <p>
+                We choose reliable technologies that help create
+                scalable, maintainable and practical products.
+            </p>
+
+        </div>
+
+
+        <div class="technology-grid">
+
+            <div class="technology-item">
+                <strong>Flutter</strong>
+                <span>Mobile Apps</span>
+            </div>
+
+            <div class="technology-item">
+                <strong>HTML</strong>
+                <span>Web</span>
+            </div>
+
+            <div class="technology-item">
+                <strong>CSS</strong>
+                <span>UI</span>
+            </div>
+
+            <div class="technology-item">
+                <strong>JavaScript</strong>
+                <span>Web Apps</span>
+            </div>
+
+            <div class="technology-item">
+                <strong>PHP</strong>
+                <span>Backend</span>
+            </div>
+
+            <div class="technology-item">
+                <strong>Firebase</strong>
+                <span>Cloud</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="section about-section" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-visual">
+
+            <div class="about-box">
+
+                <div class="about-box-small">
+                    VJApps
+                </div>
+
+                <div class="about-box-title">
+                    Digital
+                    <br>
+                    Products.
+                </div>
+
+                <div class="about-box-line"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <div class="eyebrow">
+                ABOUT VJAPPS
+            </div>
+
+            <h2>
+                Turning ideas into
+                <span>digital products.</span>
+            </h2>
+
+            <p>
+                VJApps is a software development studio focused on
+                creating useful websites, web applications and mobile
+                applications for businesses, startups and individual
+                product ideas.
+            </p>
+
+            <p>
+                We believe good software should be simple to use,
+                visually clean and built with technology that can grow
+                with your business.
+            </p>
+
+            <ul class="about-points">
+
+                <li>
+                    <span>✓</span>
+                    Clean & modern design
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    Responsive development
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    Practical business solutions
+                </li>
+
+                <li>
+                    <span>✓</span>
+                    Long-term technical support
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <div class="cta-content">
+
+                <div class="eyebrow">
+                    HAVE AN IDEA?
+                </div>
+
+                <h2>
+                    Let's build something
+                    <span>great.</span>
+                </h2>
+
+                <p>
+                    Tell us about your idea and let's discuss how
+                    we can turn it into a real digital product.
+                </p>
+
+            </div>
+
+            <a href="#contact" class="button button-white">
+                Start a Project
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="section contact-section" id="contact">
+
+    <div class="container contact-grid">
+
+        <div class="contact-content">
+
+            <div class="eyebrow">
+                CONTACT
+            </div>
+
+            <h2>
+                Let's create
+                <span>something great.</span>
+            </h2>
+
+            <p>
+                Have a website, web application or mobile app idea?
+                Send us a message and tell us what you want to build.
+            </p>
+
+            <a href="mailto:contact2jayu@gmail.com"
+               class="email-link">
+                contact2jayu@gmail.com
+            </a>
+
+        </div>
+
+
+        <form class="contact-form"
+              action="mailto:contact2jayu@gmail.com"
+              method="post"
+              enctype="text/plain">
+
+            <h3>
+                Tell us about your project
+            </h3>
+
+            <p>
+                Fill in the details below and we'll get back to you.
+            </p>
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input type="text"
+                           id="name"
+                           name="Name"
+                           placeholder="John Doe"
+                           required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input type="email"
+                           id="email"
+                           name="Email"
+                           placeholder="john@example.com"
+                           required>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="project">
+                    Project Type
+                </label>
+
+                <select id="project"
+                        name="Project">
+
+                    <option value="">
+                        Select a service
+                    </option>
+
+                    <option>
+                        Website Development
+                    </option>
+
+                    <option>
+                        Web Application
+                    </option>
+
+                    <option>
+                        Mobile App
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea id="message"
+                          name="Message"
+                          rows="5"
+                          placeholder="Tell us about your project..."
+                          required></textarea>
+
+            </div>
+
+
+            <button type="submit"
+                    class="button button-dark submit-button">
+
+                Send Message
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+    </div>
+
 </section>
 
 </main>
 
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer class="footer">
-    <div class="container footer-inner">
-        <a href="#home" class="logo footer-logo">
-            <span class="logo-mark">VJ</span>
-            <span class="logo-text">VJ<span>Apps</span></span>
-        </a>
 
-        <p>© 2026 VJApps. All rights reserved.</p>
+    <div class="container">
 
-        <a href="#home" class="back-top">↑</a>
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="logo footer-logo">
+
+                    <span class="logo-main">
+                        VJ<span>Apps</span>
+                    </span>
+
+                    <span class="logo-sub">
+                        DIGITAL PRODUCTS
+                    </span>
+
+                </a>
+
+                <p>
+                    Building modern websites, web applications
+                    and mobile apps for real-world ideas.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Company</h4>
+
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Services</h4>
+
+                <a href="#services">Website</a>
+                <a href="#services">Web App</a>
+                <a href="#services">Mobile Apps</a>
+                <a href="#services">UI / UX</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Contact</h4>
+
+                <a href="mailto:contact2jayu@gmail.com">
+                    Email Us
+                </a>
+
+                <a href="#contact">
+                    Start a Project
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 VJApps. All rights reserved.
+            </span>
+
+            <span>
+                Designed & developed by VJApps.
+            </span>
+
+        </div>
+
     </div>
+
 </footer>
-
-<script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
-
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-        menuToggle.classList.toggle("active");
-    });
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("open");
-            menuToggle.classList.remove("active");
-        });
-    });
-</script>
 
 </body>
 </html>
