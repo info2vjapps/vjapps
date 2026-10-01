@@ -101,16 +101,7 @@ img {
     justify-content: space-between;
 }
 
-.logo {
-    display: inline-flex;
-    align-items: center;
-}
 
-.logo img {
-    width: 125px;
-    height: auto;
-    display: block;
-}
 
 .logo-main {
     font-family: "Plus Jakarta Sans", sans-serif;
