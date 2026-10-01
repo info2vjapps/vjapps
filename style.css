@@ -102,9 +102,14 @@ img {
 }
 
 .logo {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 125px;
+    height: auto;
+    display: block;
 }
 
 .logo-main {
