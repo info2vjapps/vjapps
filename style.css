@@ -102,7 +102,7 @@ img {
 }
 
 
-.logo-text {
+/* .logo-text {
   font-size: 1.70rem; /* Increased size (adjust between 1rem to 1.5rem as needed) */
   font-weight: 700;   /* Slightly bolder to keep it sharp at a larger size */
   color: #333;        /* Use #fff if on a dark background */
@@ -152,7 +152,7 @@ img {
     font-weight: 700;
     letter-spacing: 1.8px;
     color: #98a2b3;
-}
+} */
 
 .nav {
     display: flex;
